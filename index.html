@@ -14,14 +14,12 @@
         <script src="dist/stickyfill.min.js"></script>
         <script>
             var elem = document.getElementById("education-div");
-            console.log("Width: "+window.innerWidth);
             $(document).ready(function(){
                 var elem = document.querySelectorAll('.fixed-nav');
                 Stickyfill.add(elem);
                 var userAgent = window.navigator.userAgent.toLowerCase();
                 $('#navbarResponsive a[href]').on('click', function (event) {
                     let getWidth = window.innerWidth;
-                    console.log("Width : "+getWidth);
                     let headerHight = '';
                     if (getWidth > 767) {
                         headerHight = 80;
