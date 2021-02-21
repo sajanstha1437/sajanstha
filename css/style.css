@@ -12,12 +12,14 @@ h1.main {
     color: #fff;
 }
 
-li.right-menu {
+li.right-menu,
+.snslist li {
     display: inline;
     margin-left: 10px;
 }
 
-li.right-menu img {
+li.right-menu img,
+.snslist img {
     height: 30px;
 }
 
@@ -245,14 +247,14 @@ li.right-menu img {
         font-size: 25px;
         padding-top: 65%;
     }
-
-    li.right-menu {
-        display: none;
-    }
 }
 
 @media(max-width:768px) {
     .work-div .col-md-3 {
         width: 50%;
+    }
+
+    li.right-menu {
+        display: none;
     }
 }
