@@ -4,38 +4,43 @@
 }
 
 body {
-    background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #000;
 }
 
 h1.main {
     color: #fff;
 }
 
-/* .menuBar {
-    height: 10%;
-    width: 100%;
-    background: #000;
+/* #side-menu {
     position: absolute;
+    left: -10px;
+    top: 20%;
+    width: 8em;
+    margin-top: -2.5em;
 }
 
-.menuBar ul {
+#side-menu li {
+    list-style: none;
     height: 50px;
-    float: left;
-    padding: 20px 15px;
-
-}
-
-.menuBar ul li {
-    display: inline;
-    padding: 40px 15px;
-    text-transform: capitalize;
-    color: #fff;
-    font-size: 20px;
+    margin-bottom: 25px;
+    font-size: small;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(212, 215, 216);
 } */
 
+li.right-menu {
+    display: inline;
+    margin-left: 10px;
+}
+
+li.right-menu img {
+    height: 30px;
+}
+
+
 .profile_pic {
-    /* margin: 10px 15px; */
     float: right;
     width: 60px;
     height: 60px;
@@ -49,7 +54,6 @@ h1.main {
     margin: auto;
 }
 
-/* .menuBar h2, */
 .animationdiv h2 {
     text-align: center;
     font-size: 50px;
@@ -158,55 +162,51 @@ h1.main {
     animation-duration: 6s;
 }
 
-.about-div {
-    background: #f1dddd;
-    padding: 10px;
-    text-align: justify;
+.intro-div {
+    padding: 20px 0px;
+    margin: auto;
+    margin-top: 20px;
+    background: #ecebeb;
 }
 
-.about-div h2 {
-    text-align: center;
-    color: #000;
-    text-shadow: 2px 2px #fff;
-    padding: 20px;
+.intro-div ul,
+.work-div ul {
+    float: left;
+}
+
+.intro-div ul li,
+.work-div ul li {
+    display: inline;
+}
+
+.intro-div ul li img,
+.work-div ul li img {
+    width: 200px;
+    height: 120px;
+    border: 2px solid #000;
+    margin: 20px;
+}
+
+.about-div {
+    background: #ecebeb;
+    text-align: justify;
 }
 
 .about-div p {
     padding: 20px;
 }
 
-.intro-div {
-    padding: 20px 0px;
-    margin: auto;
-}
-
-.intro-div {
-    width: 100%;
-    height: 100%;
-}
-
-.intro-div ul {
-    float: left;
-}
-
-.intro-div ul li {
-    display: inline;
-}
-
-.intro-div ul li img {
-    width: 200px;
-    height: 120px;
-    border: 2px solid white;
-    margin: 20px;
+.div-heading {
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    margin-top: 20px;
+    padding: 20px;
+    background-image: linear-gradient(to right, red, grey);
 }
 
 .education-div {
-    padding-top: 20px;
-    background: #f1dddd;
-}
-
-.education-div h2 {
-    padding: 20px;
+    background-image: linear-gradient(#ecebeb, grey);
+    padding-bottom: 20px;
 }
 
 .education-div .card {
@@ -214,6 +214,18 @@ h1.main {
     margin-top: 10px;
 }
 
+.work-div {
+    background-image: linear-gradient(grey, #000);
+    padding-bottom: 20px;
+}
+
+.work-div .card-img img {
+    width: 100%;
+}
+
+.work-div .bg-dark {
+    background-image: linear-gradient(black, grey);
+}
 
 @keyframes animate {
     0% {

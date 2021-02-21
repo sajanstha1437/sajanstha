@@ -12,44 +12,33 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
         <script src="dist/stickyfill.min.js"></script>
         <script>
-            var elem = document.querySelectorAll('.fixed-top');
+            console.log("Hello World.")
+            var elem = document.querySelectorAll('.fixed-nav');
             Stickyfill.add(elem);
             var userAgent = window.navigator.userAgent.toLowerCase();
             $('#navbarResponsive a[href]').on('click', function (event) {
-            console.log("Hello World.")
                 let getWidth = window.innerWidth;
                 console.log("Width : "+getWidth);
                 let headerHight = '';
                 if (getWidth > 767) {
-                    headerHight = 100; //ヘッダの高さ
+                    headerHight = 100;
                 } else {
                     if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
-                        headerHight = 60; //ヘッダの高さ
+                        headerHight = 60;
                     } else {
-                        headerHight = 300; //ヘッダの高さ
+                        headerHight = 300;
                     }
                     $('.navbar-toggler').trigger('click');
                 }
                 let href = $(this).attr("href");
                 let target = $(href == "#" || href == "" ? 'html' : href);
-                let position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                let position = target.offset().top - headerHight;
                 $("html, body").animate({ scrollTop: position }, 1000, "swing");
                 return false;
             });
         </script>
     </head>
     <body>
-        <!-- <div class="menuBar">
-            <ul>
-                <li>Home</li>
-                <li>About me</li>
-                <li>Education</li>
-                <li>Skills</li>
-            </ul>
-            <img class="profile_pic" src="images/profile.jpg"/>
-            <h2> Welcome to my portfolio site</h2>
-        </div> -->
-
         <div class="animationdiv">
             <h2> Welcome to my portfolio site</h2>
             <ul class="animation-box">
@@ -65,7 +54,7 @@
                 <li></li>
             </ul>
         </div>
-        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark fixed-nav">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -73,28 +62,58 @@
                 <img class="profile_pic" src="images/profile.jpg"/>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about-div">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education-div">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work-div" >Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skill-div" >Skills</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#about-div">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education-div">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work-div" >Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skill-div" >Skills</a>
+                        </li>
+                        <li class="nav-item  right-menu">
+                            <a href="#about-div" target="_blank">
+                                <img src="images/line.png"/>
+                            </a>
+                        </li>
+                        <li class="nav-item right-menu">
+                            <a href="https://www.facebook.com/Sajan.stha/" target="_blank">
+                                <img src="images/fb.png"/>
+                            </a>
+                        </li>
+                        <li class="nav-item right-menu">
+                            <a href="https://www.instagram.com/sajan.stha1437/"  target="_blank">
+                                <img src="images/insta.png"/>
+                            </a>
+                        </li>
+                        <li class="nav-item right-menu">
+                            <a href="https://github.com/sajanstha1437"  target="_blank">
+                                <img src="images/github.png"/>
+                            </a>
+                        </li>
+                        <li class="nav-item right-menu">
+                            <a href="https://www.linkedin.com/in/sajan-shrestha-123a60a8/"  target="_blank">
+                                <img src="images/linkedin.png"/>
+                            </a>
+                        </li>
                     </ul>
-                    <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
+
+        <div class="row container-fluid intro-div justify-content-center">
+            <ul class="text-center">
+                <li><img src="images/intro/frontend.jpg"/></li>
+                <li><img src="images/intro/webdesign.jpg"/></li>
+                <li><img src="images/intro/php1.jpg"/></li>
+                <li><img src="images/intro/php.png"/></li>
+            </ul>
+        </div>
         <div class="about-div" id="about-div">
-            <h2 class="text-center"><u>About Me</u></h2>
+            <h2 class="text-center div-heading">About Me</h2>
             <p class="aboutdiv col-md-8 text-align-justify m-auto">
                 Hello all, I am Sajan Shrestha from Nepal. Currently residing in Chiba, Japan.
                 I had been fascinated by the advanced technology of Japan since my student life in Nepal. To complete my PostGraduate in IT
@@ -118,39 +137,10 @@
                 私は日本のIT業界で働いており、目標を達成するためにさらに一生懸命取り組んでいます。
             </p>
         </div>
-        <div class="row container intro-div justify-content-center">
-            <ul class="text-center">
-                <li><img src="images/intro/frontend.jpg"/></li>
-                <li><img src="images/intro/webdesign.jpg"/></li>
-                <li><img src="images/intro/php1.jpg"/></li>
-                <li><img src="images/intro/php.png"/></li>
 
-            </ul>
-            <!-- <div class="card col-md-3">
-                <img src="images/education.jpg" class="card-img-top" alt="education">
-                <div class="card-body text-center">
-                <p class="card-text">Here you can preview my educational history.</p>
-                <a href="#education-div" class="btn btn-primary">Education</a>
-                </div>
-            </div>
-            <div class="card col-md-3">
-                <img src="images/work2.jpg" class="card-img-top" alt="work experience">
-                <div class="card-body text-center">
-                <p class="card-text">Please feel free to go through my work experiences.</p>
-                <a href="#" class="btn btn-primary">My Works</a>
-                </div>
-            </div>
-            <div class="card col-md-3">
-                <img src="images/skills2.png" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                <p class="card-text">The skills and training I have gained so far till the date.</p>
-                <a href="#" class="btn btn-primary">My Skills</a>
-                </div>
-            </div> -->
-        </div>
 
         <div class="education-div" id="education-div">
-            <h2 class="text-center"><u>Educational Background</u></h2>
+            <h2 class="text-center div-heading">Educational Background</h2>
             <div class="container">
                 <div class="card text-black bg-white col-10">
                     <div class="card-header">School Level</div>
@@ -190,24 +180,41 @@
             </div>
         </div>
 
-        <div class="education-div" id="work-div">
-            <h2 class="text-center"><u>My Works</u></h2>
+        <div class="work-div" id="work-div">
+            <h2 class="text-center div-heading">My Works</h2>
+            <div class="row container m-auto">
+                <div class="card text-white bg-dark col-3">
+                    <div class="card-header">KeyKey System</div>
+                    <div class="card-img">
+                        <img src="images/intro/frontend.jpg"/>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark col-3">
+                    <div class="card-header">User Reg. System</div>
+                    <div class="card-img">
+                        <img src="images/intro/webdesign.jpg"/>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark col-3">
+                    <div class="card-header">Project</div>
+                    <div class="card-img">
+                        <img src="images/intro/php1.jpg"/>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark col-3">
+                    <div class="card-header">Project2</div>
+                    <div class="card-img">
+                        <img src="images/intro/php.png"/>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="education-div" id="skill-div">
-            <h2 class="text-center"><u">Skills</u></h2>
+        <div class="skill-div" id="skill-div">
+            <h2 class="text-center div-heading">Skills</h2>
         </div>
 
-        <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
-        <!-- Optional JavaScript; choose one of the two! -->
-
-        <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-        -->
     </body>
 </html>
