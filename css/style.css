@@ -144,6 +144,14 @@ li.right-menu img {
     animation-duration: 6s;
 }
 
+.div-heading {
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    margin: 20px 0px;
+    padding: 10px;
+    background-image: linear-gradient(to right, red, grey);
+}
+
 .intro-div {
     padding: 20px 0px;
     margin: auto;
@@ -157,7 +165,8 @@ li.right-menu img {
 }
 
 .intro-div ul li,
-.work-div ul li {
+.work-div ul li,
+.skill-div ul li {
     display: inline;
 }
 
@@ -178,14 +187,6 @@ li.right-menu img {
     padding: 20px;
 }
 
-.div-heading {
-    color: #fff;
-    text-shadow: 2px 2px #000;
-    margin-top: 20px;
-    padding: 20px;
-    background-image: linear-gradient(to right, red, grey);
-}
-
 .education-div {
     background-image: linear-gradient(#ecebeb, grey);
     padding-bottom: 20px;
@@ -199,6 +200,7 @@ li.right-menu img {
 .work-div {
     background-image: linear-gradient(grey, #000);
     padding-bottom: 20px;
+    text-align: center
 }
 
 .work-div .card-img img {
@@ -207,6 +209,22 @@ li.right-menu img {
 
 .work-div .bg-dark {
     background-image: linear-gradient(black, grey);
+    padding-top: 10px;
+    text-align: center;
+}
+
+.skill-div li img {
+    height: 60px;
+    margin: 15px;
+}
+
+.footer-left ul li {
+    list-style: none;
+    color: #fff;
+}
+
+.footer-left ul li:nth-child(1) {
+    text-decoration: underline;
 }
 
 @keyframes animate {
@@ -218,5 +236,18 @@ li.right-menu img {
     100% {
         transform: translateY(-800px) rotate(360deg);
         opacity: 0;
+    }
+}
+
+@media(max-width:576px) {
+    .animationdiv h2 {
+        font-size: 25px;
+        padding-top: 65%;
+    }
+}
+
+@media(max-width:768px) {
+    .work-div .col-md-3 {
+        width: 50%;
     }
 }
