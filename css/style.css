@@ -204,6 +204,7 @@ li.right-menu img {
 }
 
 .work-div .card-img img {
+    border: 2px groove #fff;
     width: 100%;
 }
 
