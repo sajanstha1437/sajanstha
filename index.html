@@ -12,29 +12,34 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
         <script src="dist/stickyfill.min.js"></script>
         <script>
-            var elem = document.querySelectorAll('.fixed-nav');
-            Stickyfill.add(elem);
-            var userAgent = window.navigator.userAgent.toLowerCase();
-            $('#navbarResponsive a[href]').on('click', function (event) {
-                let getWidth = window.innerWidth;
-                console.log("Width : "+getWidth);
-                let headerHight = '';
-                if (getWidth > 767) {
-                    headerHight = 100;
-                } else {
-                    if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
-                        headerHight = 60;
+            var elem = document.getElementById("education-div");
+            console.log("Width: "+window.innerWidth);
+            $(document).ready(function(){
+                var elem = document.querySelectorAll('.fixed-nav');
+                Stickyfill.add(elem);
+                var userAgent = window.navigator.userAgent.toLowerCase();
+                $('#navbarResponsive a[href]').on('click', function (event) {
+                    let getWidth = window.innerWidth;
+                    console.log("Width : "+getWidth);
+                    let headerHight = '';
+                    if (getWidth > 767) {
+                        headerHight = 80;
                     } else {
-                        headerHight = 300;
+                        if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+                            headerHight = 60;
+                        } else {
+                            headerHight = 80;
+                        }
+                        $('.navbar-toggler').trigger('click');
                     }
-                    $('.navbar-toggler').trigger('click');
-                }
-                let href = $(this).attr("href");
-                let target = $(href == "#" || href == "" ? 'html' : href);
-                let position = target.offset().top - headerHight;
-                $("html, body").animate({ scrollTop: position }, 1000, "swing");
-                return false;
-            });
+                    let href = $(this).attr("href");
+                    let target = $(href == "#" || href == "" ? 'html' : href);
+                    let position = target.offset().top - headerHight;
+                    $("html, body").animate({ scrollTop: position }, 500, "swing");
+                    return false;
+                });
+            })
+
         </script>
     </head>
     <body>
@@ -58,7 +63,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img class="profile_pic" src="images/profile.jpg"/>
+                <a href="#"><img class="profile_pic" src="images/profile.jpg"/></a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">

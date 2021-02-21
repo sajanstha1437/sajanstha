@@ -245,6 +245,10 @@ li.right-menu img {
         font-size: 25px;
         padding-top: 65%;
     }
+
+    li.right-menu {
+        display: none;
+    }
 }
 
 @media(max-width:768px) {
